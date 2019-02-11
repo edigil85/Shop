@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28527.54
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Common", "Shop.Common\Shop.Common.csproj", "{DAA3CB43-AF00-4F85-8C5A-4380C8A6D783}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Common", "Shop.Common\Shop.Common.csproj", "{DAA3CB43-AF00-4F85-8C5A-4380C8A6D783}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{E91FFFF0-994F-4A94-B104-F73E5DE98237}"
 EndProject
@@ -17,13 +17,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIForms.Android", "Sho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIForms.iOS", "Shop.UIForms\Shop.UIForms.iOS\Shop.UIForms.iOS.csproj", "{C5359E62-695F-411D-AF43-AEB16C8F39C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIForms", "Shop.UIForms\Shop.UIForms\Shop.UIForms.csproj", "{9BD65C02-ECEF-4132-BE71-C160483B02E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.UIForms", "Shop.UIForms\Shop.UIForms\Shop.UIForms.csproj", "{9BD65C02-ECEF-4132-BE71-C160483B02E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIClassic", "Shop.UIClassic\Shop.UIClassic.csproj", "{C1DFFF5F-79B1-4B00-BA07-65620408869A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.UIClassic", "Shop.UIClassic\Shop.UIClassic.csproj", "{C1DFFF5F-79B1-4B00-BA07-65620408869A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIClassic.Android", "Shop.UIClassic.Android\Shop.UIClassic.Android.csproj", "{CD113792-AF86-4690-BE46-5B15C249E6B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIClassic.IOS", "Shop.UIClassic.IOS\Shop.UIClassic.IOS.csproj", "{ABE9C41A-2D47-406F-82AE-B9F3FE3C7A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Web", "Shop.Web\Shop.Web.csproj", "{A7F9DE22-CDC3-4857-9E91-97977A7F8729}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +129,18 @@ Global
 		{ABE9C41A-2D47-406F-82AE-B9F3FE3C7A86}.Release|iPhone.Build.0 = Release|iPhone
 		{ABE9C41A-2D47-406F-82AE-B9F3FE3C7A86}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{ABE9C41A-2D47-406F-82AE-B9F3FE3C7A86}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Release|iPhone.Build.0 = Release|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +154,7 @@ Global
 		{C1DFFF5F-79B1-4B00-BA07-65620408869A} = {89DA93CD-8476-4131-8B63-A0197EBF70B0}
 		{CD113792-AF86-4690-BE46-5B15C249E6B6} = {89DA93CD-8476-4131-8B63-A0197EBF70B0}
 		{ABE9C41A-2D47-406F-82AE-B9F3FE3C7A86} = {89DA93CD-8476-4131-8B63-A0197EBF70B0}
+		{A7F9DE22-CDC3-4857-9E91-97977A7F8729} = {E91FFFF0-994F-4A94-B104-F73E5DE98237}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C438E523-5E18-41C5-B00F-DFFB4626E67C}
