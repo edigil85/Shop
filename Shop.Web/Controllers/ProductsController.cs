@@ -1,6 +1,7 @@
 ﻿namespace Shop.Web.Controllers
 {
     using System.IO;
+    using System.Linq;
     using System.Threading.Tasks;
     using Data;
     using Data.Entities;
@@ -24,7 +25,7 @@
         // GET: Products
         public IActionResult Index()
         {
-            return View(this.productRepository.GetAll());
+            return View(this.productRepository.GetAll().OrderBy(p => p.Name));
         }
 
         // GET: Products/Details/5
@@ -73,7 +74,7 @@
 
                 var product = this.ToProduct(view, path);
                 // TODO: Pending to change to: this.User.Identity.Name
-                product.User = await this.userHelper.GetUserByEmailAsync("jzuluaga55@gmail.com");
+                product.User = await this.userHelper.GetUserByEmailAsync("edigil85@hotmail.com");
                 await this.productRepository.CreateAsync(product);
                 return RedirectToAction(nameof(Index));
             }
@@ -155,7 +156,7 @@
                     }
                     var product = this.ToProduct(view, path);
                     // TODO: Pending to change to: this.User.Identity.Name
-                    product.User = await this.userHelper.GetUserByEmailAsync("jzuluaga55@gmail.com");
+                    product.User = await this.userHelper.GetUserByEmailAsync("edigil85@hotmail.com");
                     await this.productRepository.UpdateAsync(product);
                 }
                 catch (DbUpdateConcurrencyException)
