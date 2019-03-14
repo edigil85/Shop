@@ -2,11 +2,25 @@
 {
     class MainViewModel
     {
-       public  LoginViewModel Login { get; set; }
+        private static MainViewModel instance;
 
-        public MainViewModel()
+        public  LoginViewModel Login { get; set; }
+
+       public ProductsViewModel Products { get; set; }
+
+       public MainViewModel()
+       {
+        instance = this;
+       }
+
+        public static MainViewModel GetInstance()
         {
-            this.Login = new LoginViewModel();
+            if (instance == null)
+            {
+                return new MainViewModel();
+            }
+
+            return instance;
         }
     }
 }

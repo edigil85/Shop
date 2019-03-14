@@ -1,10 +1,10 @@
-﻿using GalaSoft.MvvmLight.Command;
-using System;
-using System.Windows.Input;
-using Xamarin.Forms;
-
-namespace Shop.UIForms.ViewModels
+﻿namespace Shop.UIForms.ViewModels
 {
+    using GalaSoft.MvvmLight.Command;
+    using Shop.UIForms.Views;
+    using System;
+    using System.Windows.Input;
+    using Xamarin.Forms;
     internal class LoginViewModel
     {
         public string Email { get; set; }
@@ -47,12 +47,14 @@ namespace Shop.UIForms.ViewModels
                     "Accept"
                     );
             }
-            await Application.Current.MainPage.DisplayAlert(
-                    "OK",
-                    "Fuck Yeah!!!--..",
-                    "Accept"
-                    );
-            return;
+            //await Application.Current.MainPage.DisplayAlert(
+            //        "OK",
+            //        "Fuck Yeah!!!--..",
+            //        "Accept"
+            //        );
+            //return;
+            MainViewModel.GetInstance().Products = new ProductsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new ProductsPage());
         }
     }
 }
