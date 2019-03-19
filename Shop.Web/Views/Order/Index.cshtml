@@ -39,34 +39,34 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    @if (this.User.IsInRole("Admin"))
-                    {
-                        <th>
-                            @Html.DisplayFor(modelItem => item.User.FullName)
-                        </th>
-                    }
-                    <td>
-                        @Html.DisplayFor(modelItem => item.OrderDateLocal)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DeliveryDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Lines)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Quantity)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Value)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info"><i class="fa fa-info-circle"></i>Details</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
-                    </td>
-                </tr>
+            <tr>
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <th>
+                        @Html.DisplayFor(modelItem => item.User.FullName)
+                    </th>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDateLocal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeliveryDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lines)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td id="@item.Id">
+                    <a asp-action="Deliver" asp-route-id="@item.Id" class="btn btn-info" id="btnDeliver">Deliver</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" id="btnDelete">Delete</a>
+                </td>
+
+            </tr>
             }
         </tbody>
     </table>
