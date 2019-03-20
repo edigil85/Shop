@@ -4,42 +4,55 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Countries</h2>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<br />
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberCities)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumberCities)
-                </td>
-                <td id="@item.Id">
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" id="btnDelete">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Countries</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-responsive table-striped" id="MyTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumberCities)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumberCities)
+                                </td>
+                                <td id="@item.Id">
+                                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"><i class="fa fa-edit"></i> </a>
+                                    <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id"><i class="fa fa-list"> </i> </a>
+                                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id" id="btnDelete"><i class="fa fa-trash-o"></i> </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="deleteDialog" class="modal fade">
     <div class="modal-dialog modal-sm">
@@ -52,37 +65,34 @@
                 <p>Do you want to delete the country?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="btnYesDelete">Delete</button>
-                <button type="button" class="btn btn-success" id="btnNoDelete">No</button>
+                <button type="button" class="btn btn-danger" id="btnYesDelete"><i class="fa fa-trash-o"></i></button>
+                <button type="button" class="btn btn-success" id="btnNoDelete"><i class="fa fa-ban"></i></button>
             </div>
         </div>
     </div>
 </div>
 
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-
+            $('#MyTable').DataTable();
             var id = 0;
-
             $('a[id*=btnDelete]').click(function () {
                 debugger;
                 id = $(this).parent()[0].id;
                 $("#deleteDialog").modal('show');
                 return false;
             });
-
             $("#btnNoDelete").click(function () {
                 $("#deleteDialog").modal('hide');
                 return false;
             });
-
             $("#btnYesDelete").click(function () {
                 window.location.href = '/Countries/Delete/' + id;
             });
-
         });
     </script>
 }
