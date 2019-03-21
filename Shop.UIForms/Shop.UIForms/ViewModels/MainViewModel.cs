@@ -1,10 +1,15 @@
-﻿namespace Shop.UIForms.ViewModels
+﻿using Shop.Common.Models;
+
+namespace Shop.UIForms.ViewModels
 {
     class MainViewModel
     {
         private static MainViewModel instance;
 
-        public  LoginViewModel Login { get; set; }
+        public TokenResponse Token { get; set; }
+
+
+        public LoginViewModel Login { get; set; }
 
        public ProductsViewModel Products { get; set; }
 

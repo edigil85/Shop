@@ -34,12 +34,15 @@
         {
             this.IsRefreshing = true;
 
+            var url = Application.Current.Resources["UrlAPI"].ToString();
             var response = await this.apiService.GetListAsync<Product>(
-                "https://shopweb20190217084906.azurewebsites.net",
-                "/API",
-                "/Products");
+                url,
+                "/api",
+                "/Products",
+                "bearer",
+                MainViewModel.GetInstance().Token.Token);
 
-            this.IsRefreshing = false;
+
 
             if (!response.IsSuccess)
             {
@@ -47,11 +50,14 @@
                     "Error",
                     response.Message,
                     "Accept");
+                this.IsRefreshing = false;
                 return;
             }
 
-            var myProducts = (List<Product>)response.Result;
-            this.Products = new ObservableCollection<Product>(myProducts);
+            var products = (List<Product>)response.Result;
+            this.Products = new ObservableCollection<Product>(products);
+            this.IsRefreshing = false;
         }
+
     }
 }

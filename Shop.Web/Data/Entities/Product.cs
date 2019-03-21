@@ -41,7 +41,7 @@
                 {
                     return null;
                 }
-                return $"https://shopweb20190217084906.azurewebsites.net{this.ImageUrl.Substring(1)}";
+                return $"https://shopedigil.azurewebsites.net{this.ImageUrl.Substring(1)}";
             }
         }
     }
