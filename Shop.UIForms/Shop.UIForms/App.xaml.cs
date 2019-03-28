@@ -11,6 +11,8 @@ namespace Shop.UIForms
     {
         internal static NavigationPage Navigator;
 
+        public static MasterPage Master { get; internal set; }
+
         public App()
         {
             InitializeComponent();
